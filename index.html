@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Global Transfer Intelligence</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-box">
+                GT
+            </div>
+
+            <div class="logo-text">
+                <strong>GTIS</strong>
+                <span>Global Transfer Intelligence</span>
+            </div>
+
+        </div>
+
+        <div class="menu-title">
+            MAIN MENU
+        </div>
+
+        <nav>
+
+            <a href="#" class="menu-link active"
+               onclick="showPage('dashboard', this)">
+
+                <span>▦</span>
+                Dashboard
+
+            </a>
+
+            <a href="#" class="menu-link"
+               onclick="showPage('countries', this)">
+
+                <span>◉</span>
+                Countries
+
+            </a>
+
+            <a href="#" class="menu-link"
+               onclick="showPage('imports', this)">
+
+                <span>↓</span>
+                Import Records
+
+            </a>
+
+            <a href="#" class="menu-link"
+               onclick="showPage('exports', this)">
+
+                <span>↑</span>
+                Export Records
+
+            </a>
+
+            <a href="#" class="menu-link"
+               onclick="showPage('transfers', this)">
+
+                <span>⇄</span>
+                Transfer Records
+
+            </a>
+
+            <a href="#" class="menu-link"
+               onclick="showPage('reports', this)">
+
+                <span>▤</span>
+                Reports
+
+            </a>
+
+        </nav>
+
+        <div class="menu-title">
+            SYSTEM
+        </div>
+
+        <nav>
+
+            <a href="#" class="menu-link">
+
+                <span>⚙</span>
+                Settings
+
+            </a>
+
+            <a href="#" class="menu-link">
+
+                <span>?</span>
+                Help Center
+
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="security-box">
+
+                <div class="security-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>System Secure</strong>
+
+                    <small>
+                        All systems operational
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="user-box">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div class="user-info">
+
+                    <strong>Administrator</strong>
+
+                    <small>
+                        System Admin
+                    </small>
+
+                </div>
+
+                <span>⋮</span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="mobile-menu"
+                 onclick="toggleSidebar()">
+                ☰
+            </div>
+
+            <div class="breadcrumb">
+
+                <span>Management System</span>
+
+                <b>/</b>
+
+                <strong id="breadcrumbTitle">
+                    Dashboard
+                </strong>
+
+            </div>
+
+            <div class="top-actions">
+
+                <button class="icon-button"
+                        onclick="toggleTheme()">
+                    ☾
+                </button>
+
+                <button class="icon-button notification"
+                        onclick="showNotification()">
+
+                    ♢
+
+                    <span></span>
+
+                </button>
+
+                <div class="top-user">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>Administrator</strong>
+
+                        <small>Admin</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+            <!-- DASHBOARD -->
+
+            <section id="dashboard"
+                     class="page active-page">
+
+                <div class="welcome">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            GLOBAL TRANSFER INTELLIGENCE
+                        </p>
+
+                        <h1>
+                            Dashboard Overview
+                        </h1>
+
+                        <p>
+                            Monitor recorded international transfer
+                            activity and generate analytical reports.
+                        </p>
+
+                    </div>
+
+                    <div class="date-box">
+
+                        <span>REPORTING PERIOD</span>
+
+                        <strong>
+                            2024 — 2025
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STAT CARDS -->
+
+                <div class="stats">
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon blue">
+                                ◉
+                            </div>
+
+                            <span class="trend">
+                                +8.4%
+                            </span>
+
+                        </div>
+
+                        <span class="stat-label">
+                            Countries
+                        </span>
+
+                        <h2 data-target="120">
+                            0
+                        </h2>
+
+                        <small>
+                            Participating countries
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon purple">
+                                ⇄
+                            </div>
+
+                            <span class="trend">
+                                +12.2%
+                            </span>
+
+                        </div>
+
+                        <span class="stat-label">
+                            Transfer Records
+                        </span>
+
+                        <h2 data-target="1245">
+                            0
+                        </h2>
+
+                        <small>
+                            Recorded transactions
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon green">
+                                ✓
+                            </div>
+
+                            <span class="trend">
+                                +5.7%
+                            </span>
+
+                        </div>
+
+                        <span class="stat-label">
+                            Completed Records
+                        </span>
+
+                        <h2 data-target="987">
+                            0
+                        </h2>
+
+                        <small>
+                            Completed records
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon orange">
+                                ◫
+                            </div>
+
+                            <span class="trend neutral">
+                                Current
+                            </span>
+
+                        </div>
+
+                        <span class="stat-label">
+                            Reporting Years
+                        </span>
+
+                        <h2 data-target="15">
+                            0
+                        </h2>
+
+                        <small>
+                            Years represented
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHART ROW -->
+
+                <div class="grid-two">
+
+                    <div class="panel large-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    ANALYTICS
+                                </span>
+
+                                <h3>
+                                    Transfer Activity
+                                </h3>
+
+                            </div>
+
+                            <select id="chartPeriod"
+                                    onchange="updateChart()">
+
+                                <option value="year">
+                                    Yearly
+                                </option>
+
+                                <option value="quarter">
+                                    Quarterly
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="chart-container">
+
+                            <canvas id="activityChart"></canvas>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    DISTRIBUTION
+                                </span>
+
+                                <h3>
+                                    Transfer Categories
+                                </h3>
+
+                            </div>
+
+                            <button class="more-button">
+                                ⋮
+                            </button>
+
+                        </div>
+
+                        <div class="chart-container doughnut">
+
+                            <canvas id="categoryChart"></canvas>
+
+                        </div>
+
+                        <div class="legend">
+
+                            <div>
+                                <i class="dot blue-dot"></i>
+                                Aircraft
+                                <strong>34%</strong>
+                            </div>
+
+                            <div>
+                                <i class="dot purple-dot"></i>
+                                Naval Systems
+                                <strong>22%</strong>
+                            </div>
+
+                            <div>
+                                <i class="dot green-dot"></i>
+                                Vehicles
+                                <strong>25%</strong>
+                            </div>
+
+                            <div>
+                                <i class="dot orange-dot"></i>
+                                Other
+                                <strong>19%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOWER GRID -->
+
+                <div class="grid-three">
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    GEOGRAPHICAL
+                                </span>
+
+                                <h3>
+                                    Regional Distribution
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="region-list">
+
+                            <div class="region">
+
+                                <div class="region-name">
+
+                                    <span>Asia</span>
+
+                                    <strong>38%</strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:38%"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="region">
+
+                                <div class="region-name">
+
+                                    <span>Europe</span>
+
+                                    <strong>27%</strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:27%"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="region">
+
+                                <div class="region-name">
+
+                                    <span>North America</span>
+
+                                    <strong>21%</strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:21%"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="region">
+
+                                <div class="region-name">
+
+                                    <span>Other Regions</span>
+
+                                    <strong>14%</strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:14%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    STATUS
+                                </span>
+
+                                <h3>
+                                    Record Status
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="status-items">
+
+                            <div class="status-item">
+
+                                <span class="status-circle completed">
+                                    ✓
+                                </span>
+
+                                <div>
+
+                                    <strong>Completed</strong>
+
+                                    <small>
+                                        987 records
+                                    </small>
+
+                                </div>
+
+                                <b>79%</b>
+
+                            </div>
+
+                            <div class="status-item">
+
+                                <span class="status-circle approved">
+                                    ✓
+                                </span>
+
+                                <div>
+
+                                    <strong>Approved</strong>
+
+                                    <small>
+                                        143 records
+                                    </small>
+
+                                </div>
+
+                                <b>11%</b>
+
+                            </div>
+
+                            <div class="status-item">
+
+                                <span class="status-circle pending">
+                                    !
+                                </span>
+
+                                <div>
+
+                                    <strong>Pending</strong>
+
+                                    <small>
+                                        115 records
+                                    </small>
+
+                                </div>
+
+                                <b>10%</b>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    SYSTEM
+                                </span>
+
+                                <h3>
+                                    Recent Activity
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="timeline">
+
+                            <div>
+
+                                <span></span>
+
+                                <p>
+                                    Transfer record updated
+                                    <small>12 min ago</small>
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <span></span>
+
+                                <p>
+                                    New country added
+                                    <small>45 min ago</small>
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <span></span>
+
+                                <p>
+                                    Report generated
+                                    <small>2 hours ago</small>
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <span></span>
+
+                                <p>
+                                    Database synchronized
+                                    <small>5 hours ago</small>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="panel table-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-label">
+                                RECORD MANAGEMENT
+                            </span>
+
+                            <h3>
+                                Recent Transfer Records
+                            </h3>
+
+                        </div>
+
+                        <button class="outline-button"
+                                onclick="showPage('transfers')">
+
+                            View All
+
+                        </button>
+
+                    </div>
+
+                    <div class="table-tools">
+
+                        <div class="search">
+
+                            <span>⌕</span>
+
+                            <input type="text"
+                                   id="searchInput"
+                                   placeholder="Search records..."
+                                   onkeyup="searchRecords()">
+
+                        </div>
+
+                        <select>
+
+                            <option>
+                                All Status
+                            </option>
+
+                            <option>
+                                Completed
+                            </option>
+
+                            <option>
+                                Approved
+                            </option>
+
+                            <option>
+                                Pending
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table id="transferTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Reference</th>
+                                    <th>Exporter</th>
+                                    <th>Importer</th>
+                                    <th>Category</th>
+                                    <th>Year</th>
+                                    <th>Status</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>TR-2025-001</strong>
+                                    </td>
+
+                                    <td>Country A</td>
+
+                                    <td>Country B</td>
+
+                                    <td>Aircraft</td>
+
+                                    <td>2025</td>
+
+                                    <td>
+                                        <span class="badge completed-badge">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>TR-2025-002</strong>
+                                    </td>
+
+                                    <td>Country C</td>
+
+                                    <td>Country B</td>
+
+                                    <td>Naval Systems</td>
+
+                                    <td>2025</td>
+
+                                    <td>
+                                        <span class="badge approved-badge">
+                                            Approved
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>TR-2025-003</strong>
+                                    </td>
+
+                                    <td>Country D</td>
+
+                                    <td>Country E</td>
+
+                                    <td>Vehicles</td>
+
+                                    <td>2025</td>
+
+                                    <td>
+                                        <span class="badge pending-badge">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>TR-2024-004</strong>
+                                    </td>
+
+                                    <td>Country A</td>
+
+                                    <td>Country F</td>
+
+                                    <td>Electronic Systems</td>
+
+                                    <td>2024</td>
+
+                                    <td>
+                                        <span class="badge completed-badge">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- COUNTRIES -->
+
+            <section id="countries"
+                     class="page">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            DATABASE
+                        </span>
+
+                        <h1>Countries</h1>
+
+                        <p>
+                            Manage participating countries and regions.
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button">
+                        + Add Country
+                    </button>
+
+                </div>
+
+                <div class="country-grid">
+
+                    <div class="country-card">
+                        <span>🇺🇸</span>
+                        <div>
+                            <strong>Country A</strong>
+                            <small>North America</small>
+                        </div>
+                    </div>
+
+                    <div class="country-card">
+                        <span>🇮🇳</span>
+                        <div>
+                            <strong>Country B</strong>
+                            <small>Asia</small>
+                        </div>
+                    </div>
+
+                    <div class="country-card">
+                        <span>🇫🇷</span>
+                        <div>
+                            <strong>Country C</strong>
+                            <small>Europe</small>
+                        </div>
+                    </div>
+
+                    <div class="country-card">
+                        <span>🇩🇪</span>
+                        <div>
+                            <strong>Country D</strong>
+                            <small>Europe</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- IMPORTS -->
+
+            <section id="imports"
+                     class="page">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            RECORDS
+                        </span>
+
+                        <h1>Import Records</h1>
+
+                        <p>
+                            Recorded import-side transfer information.
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button">
+                        + New Record
+                    </button>
+
+                </div>
+
+                <div class="empty-panel">
+
+                    <div class="empty-icon">
+                        ↓
+                    </div>
+
+                    <h3>
+                        Import Management
+                    </h3>
+
+                    <p>
+                        Import records can be connected to your
+                        PHP/MySQL backend.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- EXPORTS -->
+
+            <section id="exports"
+                     class="page">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            RECORDS
+                        </span>
+
+                        <h1>Export Records</h1>
+
+                        <p>
+                            Recorded export-side transfer information.
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button">
+                        + New Record
+                    </button>
+
+                </div>
+
+                <div class="empty-panel">
+
+                    <div class="empty-icon">
+                        ↑
+                    </div>
+
+                    <h3>
+                        Export Management
+                    </h3>
+
+                    <p>
+                        Export records can be connected to your
+                        PHP/MySQL backend.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- TRANSFERS -->
+
+            <section id="transfers"
+                     class="page">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            DATABASE
+                        </span>
+
+                        <h1>Transfer Records</h1>
+
+                        <p>
+                            Search and review recorded transfers.
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button">
+                        + Add Transfer
+                    </button>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="table-tools">
+
+                        <div class="search">
+
+                            <span>⌕</span>
+
+                            <input type="text"
+                                   placeholder="Search transfer..."
+                                   onkeyup="searchAllTransfers(this)">
+
+                        </div>
+
+                        <button class="outline-button">
+                            Export CSV
+                        </button>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Reference</th>
+                                    <th>Exporter</th>
+                                    <th>Importer</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
+                                    <th>Year</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td><strong>TR-2025-001</strong></td>
+                                    <td>Country A</td>
+                                    <td>Country B</td>
+                                    <td>Aircraft</td>
+                                    <td>12</td>
+                                    <td>2025</td>
+                                    <td>
+                                        <span class="badge completed-badge">
+                                            Completed
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>TR-2025-002</strong></td>
+                                    <td>Country C</td>
+                                    <td>Country B</td>
+                                    <td>Naval Systems</td>
+                                    <td>8</td>
+                                    <td>2025</td>
+                                    <td>
+                                        <span class="badge approved-badge">
+                                            Approved
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>TR-2025-003</strong></td>
+                                    <td>Country D</td>
+                                    <td>Country E</td>
+                                    <td>Vehicles</td>
+                                    <td>25</td>
+                                    <td>2025</td>
+                                    <td>
+                                        <span class="badge pending-badge">
+                                            Pending
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- REPORTS -->
+
+            <section id="reports"
+                     class="page">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            ANALYTICS
+                        </span>
+
+                        <h1>Reports</h1>
+
+                        <p>
+                            Generate analytical summaries from recorded data.
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button"
+                            onclick="window.print()">
+
+                        Print Report
+
+                    </button>
+
+                </div>
+
+                <div class="report-grid">
+
+                    <div class="report-card">
+
+                        <span class="report-icon">
+                            ▤
+                        </span>
+
+                        <h3>
+                            Annual Report
+                        </h3>
+
+                        <p>
+                            Year-wise transfer activity.
+                        </p>
+
+                        <button>
+                            Generate
+                        </button>
+
+                    </div>
+
+                    <div class="report-card">
+
+                        <span class="report-icon">
+                            ◉
+                        </span>
+
+                        <h3>
+                            Country Report
+                        </h3>
+
+                        <p>
+                            Country-level statistical summary.
+                        </p>
+
+                        <button>
+                            Generate
+                        </button>
+
+                    </div>
+
+                    <div class="report-card">
+
+                        <span class="report-icon">
+                            ⇄
+                        </span>
+
+                        <h3>
+                            Transfer Report
+                        </h3>
+
+                        <p>
+                            Detailed transfer records.
+                        </p>
+
+                        <button>
+                            Generate
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div id="toast"
+     class="toast">
+
+    <span>✓</span>
+
+    <p>
+        Notification received
+    </p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
